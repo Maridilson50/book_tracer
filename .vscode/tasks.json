@@ -1,0 +1,51 @@
+{
+  "version": "2.0.0",
+  "tasks": [
+    {
+      "label": "Build (MSYS2 UCRT64)",
+      "type": "shell",
+      "command": "C:\\msys64\\usr\\bin\\bash.exe",
+      "args": [
+        "-lc",
+        "g++ -std=c++17 main.cpp -o rooster.exe $(pkg-config --cflags sqlite3 libcurl) $(pkg-config --libs sqlite3 libcurl)"
+      ],
+      "options": {
+        "cwd": "${workspaceFolder}",
+        "env": {
+          "MSYSTEM": "UCRT64",
+          "CHERE_INVOKING": "1",
+          "PATH": "C:\\msys64\\ucrt64\\bin;${env:PATH}",
+          "CURL_CA_BUNDLE": "C:\\msys64\\ucrt64\\etc\\pki\\ca-trust\\extracted\\curl\\ca-bundle.crt",
+          "SSL_CERT_FILE": "C:\\msys64\\ucrt64\\etc\\pki\\ca-trust\\extracted\\openssl\\ca-bundle.trust.crt",
+          "GOOGLE_BOOKS_API_KEY": "${env:GOOGLE_BOOKS_API_KEY}"
+        }
+      },
+      "problemMatcher": ["$gcc"]
+      // <-- no group here; not the default anymore
+    },
+    {
+      "label": "Run rooster.exe (MSYS2 UCRT64)",
+      "type": "shell",
+      "command": "C:\\msys64\\usr\\bin\\bash.exe",
+      "args": ["-lc", "./rooster.exe"],
+      "options": {
+        "cwd": "${workspaceFolder}",
+        "env": {
+          "MSYSTEM": "UCRT64",
+          "CHERE_INVOKING": "1",
+          "PATH": "C:\\msys64\\ucrt64\\bin;${env:PATH}",
+          "GOOGLE_BOOKS_API_KEY": "${env:GOOGLE_BOOKS_API_KEY}",
+          "CURL_CA_BUNDLE": "C:\\msys64\\ucrt64\\etc\\pki\\ca-trust\\extracted\\curl\\ca-bundle.crt",
+          "SSL_CERT_FILE": "C:\\msys64\\ucrt64\\etc\\pki\\ca-trust\\extracted\\openssl\\ca-bundle.trust.crt"
+        }
+      },
+      "presentation": { "reveal": "always", "panel": "dedicated" }
+    },
+    {
+      "label": "Build & Run",
+      "dependsOn": ["Build (MSYS2 UCRT64)", "Run rooster.exe (MSYS2 UCRT64)"],
+      "problemMatcher": [],
+      "group": { "kind": "build", "isDefault": true }   // <-- make this the default for Ctrl+Shift+B
+    }
+  ]
+}

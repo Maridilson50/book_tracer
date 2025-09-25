@@ -1,0 +1,43 @@
+{
+  "version": "0.2.0",
+  "configurations": [
+    {
+      "name": "Run rooster.exe (MSYS2 build)",
+      "type": "cppdbg",
+      "request": "launch",
+      "program": "${workspaceFolder}\\rooster.exe",
+      "cwd": "${workspaceFolder}",
+      "externalConsole": true,
+      "MIMode": "gdb",
+      "miDebuggerPath": "C:\\msys64\\ucrt64\\bin\\gdb.exe",
+      "environment": [
+        { "name": "GOOGLE_BOOKS_API_KEY", "value": "${env:GOOGLE_BOOKS_API_KEY}" },
+        { "name": "GOOGLE_BOOKS_API_KEY", "value": "${env:GOOGLE_BOOKS_API_KEY}" },
+        { "name": "CURL_CA_BUNDLE", "value": "C:\\msys64\\ucrt64\\etc\\pki\\ca-trust\\extracted\\curl\\ca-bundle.crt" },
+        { "name": "SSL_CERT_FILE", "value": "C:\\msys64\\ucrt64\\etc\\pki\\ca-trust\\extracted\\openssl\\ca-bundle.trust.crt" },
+        { "name": "PATH", "value": "C:\\msys64\\ucrt64\\bin;${env:PATH}" },
+        { "name": "MSYSTEM", "value": "UCRT64" }
+      ]
+
+    },
+    {
+      "name": "C/C++ Runner: Debug Session",
+      "type": "cppdbg",
+      "request": "launch",
+      "args": [],
+      "stopAtEntry": false,
+      "externalConsole": true,
+      "cwd": "c:/Users/Maridilson Gomes/Desktop/School/CS/CIS_123_A2W/freecodecamp/My C++ Projects/book_tracer_app",
+      "program": "c:/Users/Maridilson Gomes/Desktop/School/CS/CIS_123_A2W/freecodecamp/My C++ Projects/book_tracer_app/build/Debug/outDebug",
+      "MIMode": "gdb",
+      "miDebuggerPath": "gdb",
+      "setupCommands": [
+        {
+          "description": "Enable pretty-printing for gdb",
+          "text": "-enable-pretty-printing",
+          "ignoreFailures": true
+        }
+      ]
+    }
+  ]
+}

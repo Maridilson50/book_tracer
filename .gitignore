@@ -1,0 +1,20 @@
+# build outputs / local db
+rooster.exe
+books.db
+
+# VS Code
+.vscode/**/*
+!.vscode/tasks.json
+!.vscode/launch.json
+
+# OS junk
+.DS_Store
+Thumbs.db
+
+# Logs / temp
+*.log
+*.tmp
+
+# Never commit secrets
+.env
+.env.*
